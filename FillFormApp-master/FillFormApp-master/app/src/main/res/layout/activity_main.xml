@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/FirstName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:text="Last Name"
+        app:layout_constraintLeft_toRightOf="@+id/FirstName"
+
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:id="@+id/Gender"
+        android:layout_width="76dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="44dp"
+        android:text="Gender"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Gender">
+
+        <RadioButton
+            android:id="@+id/Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Male"
+            tools:ignore="MissingConstraints" />
+
+        <RadioButton
+            android:id="@+id/Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:onClick="onRadioButtonClicked"
+            tools:ignore="MissingConstraints" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/BirthdayText"
+        android:layout_width="77dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="28dp"
+        android:text="Birthday"
+        android:textAlignment="center"
+        android:textColor="#151414"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/gender"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <TextView
+        android:id="@+id/AddressText"
+        android:layout_width="77dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="31dp"
+        android:text="Address"
+        android:textAlignment="center"
+        android:textColor="#151414"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/Birthday"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/EmailText"
+        android:layout_width="77dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="40dp"
+        android:text="Email"
+        android:textAlignment="center"
+        android:textColor="#151414"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/Address"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <EditText
+        android:id="@+id/Birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BirthdayText" />
+
+    <Button
+        android:id="@+id/SelectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#F4EEEE"
+        android:backgroundTint="#E4DEDE"
+        android:text="Select"
+        android:onClick="showDatePicker"
+        app:iconTint="#E8DDDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@+id/Birthday"
+        app:layout_constraintTop_toBottomOf="@+id/BirthdayText"
+        app:rippleColor="#EFE2E2"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddressText" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailText" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="I agree to Terms of use"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@color/white"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
